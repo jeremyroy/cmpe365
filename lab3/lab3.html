@@ -1,0 +1,99 @@
+<html>
+<head>
+  <title>CMPE365 Algorithms</title>
+</head>
+<body bgcolor="#fdeca9">
+<p>
+<h3>
+Lab exercises 3
+</h3>
+<center>
+	Must be uploaded at the end of your lab in Week 4<br>
+</center>
+<p>
+<p>
+The deliverable from this lab is a Word document that answers the questions,
+shows that you've done the work, and understand what you've been doing;
+and the code that you've written (in separate files).
+Don't get hung up on formatting, but spare a thought for the TAs who
+have to read a lot of these and try to lay the content out so that it's
+clear.
+Recall that the PrtScr (print screen) button copies the entire desktop 
+view to the clipboard, while Alt-PrtScr copies only the active window.
+<p>
+The emphasis in this course is on the algorithms themselves, but you
+should write the highest quality code that you can, including documentation
+where necessary, especially when you are doing something tricky or clever.
+Remember that TAs are looking at a lot of lab solutions, so help them
+out.
+<p>
+All work that you hand in must be done by you. You can ask
+other people questions, especially the TAs, but the work must be your
+own.
+<p>
+This lab focuses on a version of the Best Employee problem that has
+sometimes been called the UAV problem, or the Holiday photos problem.
+<p>
+<b>Problem</b>
+<p>
+Suppose that you have a UAV flying over a foreign country, and you want
+it to take pictures of anything interesting it sees. Because of limited
+storage space it can only keep a small fraction of the images its cameras
+take, so the question is: which ones to keep?
+<p>
+To make this a bit more concrete, let's suppose that you have space
+to keep <i>k</i> images (a parameter to your algorithm), and the
+camera system can
+compute 10 binary values for each image, which provide information about
+the kinds of things it contains. So there might be a bit for buildings,
+a bit for water, a bit for missile launchers, a bit for roads, a
+bit for runways, and so on. Images that contain (lots of) these things
+are interesting, but you also want the set of images to be as variable
+as possible. So the function that computes how interesting an image
+is can't just depend on how many bits are set in the current image;
+it must depend both on what images have already been seen and, in
+a sense, on what else might still be seen.
+<p>
+A useful distance function for binary data is called <i>Hamming
+distance</i> -- the distance between two binary records is the number
+of places in which their entries differ.
+<p>
+You will find a set of 1000 'images' (i.e. sets of 10 binary values)
+in the file images.csv.
+An obvious way to attack this problem is to compare each new image to
+the best k seen so far, and replace one of them by the new one if it's
+far from all of them.
+<p>
+Build an implementation of this idea. 
+You'll have to decide whether you want to keep the best k images so
+far in a sorted order, and you'll have to initialise this list with
+the first k images. Note that you'll have to keep track of which
+images they are because this is the final output of your program.
+<p>
+How well does your algorithm do? As a
+way to answer this, the file coords.csv contains 2-dimensional
+coordinates for each image (in a space where the 10 dimensions have
+been projected down to 2). Show a plot of your k final images
+using their coordinates taken from this file (they should be nicely
+spread out). In other words, if original image 43 is in your set
+of k, you can plot a point at the coordinate position from row 43
+of the coordinates file.
+<p>
+There is no <b>right answer</b> so you'll have to argue why your
+answer is good.
+<p>
+Experiment with choosing different values of k.
+<p>
+Now think about ways you might improve the basic algorithm. Does
+the pattern of distances from the current set of images contain other
+information you can leverage?
+<p>
+Talk about your results and issues in your report.
+<p>
+Save your Word document so that you have a copy.
+<b>Include your name in the file names you upload, and upload the report
+and the code in two separate files</b>.
+<p>
+Make sure you have copies of everything you worked on either saved on
+your usb key or emailed to yourself. You're done for this week.
+</html>

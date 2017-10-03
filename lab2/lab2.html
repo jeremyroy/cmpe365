@@ -1,0 +1,95 @@
+<html>
+<head>
+  <title>CMPE365 Algorithms</title>
+</head>
+<body bgcolor="#fdeca9">
+<p>
+<h3>
+Lab exercises 1
+</h3>
+<center>
+	Must be uploaded at the end of your lab in Week 3<br>
+</center>
+<p>
+<p>
+The deliverable from this lab is a Word document that answers the questions,
+shows that you've done the work, and understand what you've been doing;
+and the code that you've written (which can be in separate files).
+Don't get hung up on formatting, but spare a thought for the TAs who
+have to read a lot of these and try to lay the content out so that it's
+clear.
+Recall that the PrtScr (print screen) button copies the entire desktop 
+view to the clipboard, while Alt-PrtScr copies only the active window.
+<p>
+The emphasis in this course is on the algorithms themselves, but you
+should write the highest quality code that you can, including documentation
+where necessary, especially when you are doing something tricky or clever.
+Remember that TAs are looking at a lot of lab solutions, so help them
+out.
+<p>
+All work that you hand in must be done by you. You can ask
+other people questions, especially the TAs, but the work must be your
+own.
+<p>
+Labs are worth 5 marks each, and marks are integers. 
+The standard mark for a lab well done is
+4/5. Labs are designed to be open-ended and encourage you to explore.
+The mark of 5/5 is reserved for those who do something interesting
+beyond the core of each lab, or for those whose presentation displays
+a sophisticated understanding of the work (or both).
+<p>
+This lab focuses on the Collatz program.
+Recall that it is believed (but hasn't been proved) that this loop with
+terminate when it is started with any positive integer value for x.
+<p>
+<ol>
+<li>
+You may recall the process for finding all of the prime numbers smaller
+than a given number using the Sieve of Eratosthenes. The algorithm starts
+from small integers and crosses off all of its multiples which cannot,
+of course, be prime.
+<p>
+We will use a similar idea to check all of the possible starting integers
+smaller than a given value for the Collatz problem.
+Suppose I want to check all of the starting integers smaller than 100. As I
+execute the loop, x starts out at 100, but its value jumps around
+other values, some less than 100 and some greater. Eventually (I happen
+to know) it reaches 1 and the loop stops.
+<p>
+Now if I want to check x starting at 99, as the values jump around they
+may reach a value that has previously been seen during the calculation
+starting from 100. If this happens, then we know right away that the
+loop will terminate, so we don't need to do the rest of the calculation.
+<p>
+Implement this idea by keeping a list, initially 0s, that gets values
+set if it is ever visited by one run of the Collatz program. Use it to
+check the Collatz conjecture for all starting points 1 to n, for some
+large n.
+<p>
+Of course, we don't know how long to make this list. Investigate
+how large intermediate values of x tend to be, as a function of the 
+starting value. Does it matter if we don't use a full list, for
+example only storing values up to the initial value of x, or
+perhaps twice that?
+<p>
+<li>
+If you have time, experiment with whether this saves, on average, any
+time by comparing it to a straightforward implementation that doesn't
+save information from previous runs.
+<p>
+<li>
+If you have time, investigate whether there are any patterns of how
+x converges to its final value of 1. Do intermediate values have any
+structure? Do different runs preferentially reach previous values, or
+is it uniform? Does every terminating run also pass through x = 2?
+<p>
+</ol>
+<p>
+Save your Word document so that you have a copy.
+<b>Include your name in the file names you upload, and upload the report
+and the code in two separate files</b>.
+<p>
+Make sure you have copies of everything you worked on either saved on
+your usb key or emailed to both of you.
+You're done for this week.
+</html>
